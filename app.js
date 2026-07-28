@@ -323,7 +323,7 @@ const SITE_CONFIG = Object.freeze({
             const source = sources[video.dataset.configVideo];
             if (!source) return;
 
-            const container = video.closest(".video-frame, .phone-shell");
+            const container = video.closest(".video-frame, .bot-flow__media");
             const control = container?.querySelector("[data-video-control]");
             const label = control?.querySelector("[data-video-control-label]");
 

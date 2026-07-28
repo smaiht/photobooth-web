@@ -164,14 +164,14 @@
             </div>
         </section>
 
-        <section class="section section--paper" aria-labelledby="result-title">
+        <section class="section section--paper section--compact section--results" aria-labelledby="result-title">
             <div class="shell">
                 <div class="section-heading section-heading--split" data-reveal>
                     <div>
                         <p class="eyebrow">Не просто фотография</p>
                         <h2 id="result-title">Один подход к будке — <em>три воспоминания</em></h2>
                     </div>
-                    <p>Бумажный снимок остаётся в руках, оригиналы — в телефоне, а короткое видео сохраняет то, что происходило между кадрами.</p>
+                    <p>Принт — в руки, оригиналы и видео — в телефон.</p>
                 </div>
 
                 <div class="result-grid">
@@ -179,25 +179,25 @@
                         <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="9" y="14" width="46" height="36" rx="5"/><circle cx="32" cy="32" r="10"/><path d="M21 14l4-6h14l4 6"/></svg>
                         <span class="result-card__index">01</span>
                         <h3>Принт сразу</h3>
-                        <p>Выбранный макет печатается прямо на площадке — можно унести, подарить или вклеить в альбом.</p>
+                        <p>Готовый снимок — через несколько секунд.</p>
                     </article>
                     <article class="result-card result-card--lilac" data-reveal>
                         <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="17" y="6" width="30" height="52" rx="7"/><path d="M25 13h14M27 50h10"/><rect x="22" y="19" width="20" height="24" rx="2"/></svg>
                         <span class="result-card__index">02</span>
                         <h3>Оригиналы по QR</h3>
-                        <p>После съёмки гость сканирует QR-код и открывает свою персональную папку на телефоне.</p>
+                        <p>Фотографии в полном качестве — сразу в телефоне.</p>
                     </article>
                     <article class="result-card result-card--yellow" data-reveal>
                         <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="7" y="13" width="50" height="38" rx="6"/><path d="M27 24l15 8-15 8z"/></svg>
                         <span class="result-card__index">03</span>
                         <h3>Живое видео</h3>
-                        <p>Вместе с фотографиями сохраняется видео сессии — улыбки, движения и настоящие реакции гостей.</p>
+                        <p>Короткое видео сохраняет реакции между кадрами.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section section--soft" id="how" aria-labelledby="how-title">
+        <section class="section section--soft section--compact" id="how" aria-labelledby="how-title">
             <div class="shell">
                 <div class="section-heading section-heading--center" data-reveal>
                     <p class="eyebrow">Всё понятно без инструкции</p>
@@ -209,25 +209,25 @@
                         <span class="process-list__number">1</span>
                         <div class="process-list__visual process-list__visual--tap" aria-hidden="true"><span>нажми</span></div>
                         <h3>Начать</h3>
-                        <p>Гость подходит к сенсорному экрану и запускает съёмку одним касанием.</p>
+                        <p>Коснуться экрана — съёмка запустится сама.</p>
                     </li>
                     <li data-reveal>
                         <span class="process-list__number">2</span>
                         <div class="process-list__visual process-list__visual--count" aria-hidden="true"><strong>3</strong></div>
-                        <h3>Сняться</h3>
-                        <p>Live-view, обратный отсчёт и четыре кадра — можно менять позы и звать друзей.</p>
+                        <h3>Съёмка</h3>
+                        <p>Четыре кадра с обратным отсчётом.</p>
                     </li>
                     <li data-reveal>
                         <span class="process-list__number">3</span>
                         <div class="process-list__visual process-list__visual--choose" aria-hidden="true"><i></i><i></i></div>
                         <h3>Выбрать</h3>
-                        <p>На экране появляются реальные превью: классическая сетка или две фотополоски.</p>
+                        <p>Сетка 2×2 или две фотополоски.</p>
                     </li>
                     <li data-reveal>
                         <span class="process-list__number">4</span>
                         <div class="process-list__visual process-list__visual--take" aria-hidden="true"><i></i><b></b></div>
                         <h3>Забрать</h3>
-                        <p>Будка печатает снимок, а QR-код открывает оригиналы и видео на телефоне.</p>
+                        <p>Принт — сразу, оригиналы и видео — по QR.</p>
                     </li>
                 </ol>
             </div>
@@ -278,33 +278,46 @@
 
         <section class="section section--bot" id="phone-print" aria-labelledby="phone-print-title">
             <div class="shell bot-grid">
-                <div class="bot-video" data-reveal>
-                    <div class="phone-shell">
-                        <div class="phone-shell__speaker" aria-hidden="true"></div>
-                        <video
-                            data-config-video="bot"
-                            poster="assets/bot-video-poster.svg"
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                        >Видео о печати фотографии через Telegram и ВКонтакте</video>
-                        <button class="video-control video-control--phone" type="button" data-video-control hidden>
-                            <span data-video-control-label>Пауза</span>
-                        </button>
+                <div class="bot-flow" data-reveal aria-label="Как фотография с телефона превращается в готовый принт">
+                    <figure class="bot-flow__card bot-flow__card--message">
+                        <div class="bot-flow__media">
+                            <video
+                                data-config-video="bot"
+                                poster="assets/bot-video-poster.svg"
+                                muted
+                                loop
+                                playsinline
+                                preload="metadata"
+                            >Переписка с ботом печати в Telegram или ВКонтакте</video>
+                            <button class="video-control video-control--bot" type="button" data-video-control hidden>
+                                <span data-video-control-label>Пауза</span>
+                            </button>
+                        </div>
+                        <figcaption><span>01</span><strong>Отправить фото боту</strong></figcaption>
+                    </figure>
+
+                    <div class="bot-flow__arrow" aria-hidden="true">
+                        <span>в печать</span>
+                        <i>→</i>
                     </div>
-                    <span class="bot-video__note">из телефона — в печать</span>
+
+                    <figure class="bot-flow__card bot-flow__card--print">
+                        <div class="bot-flow__media">
+                            <img src="assets/bot-print-output.svg" alt="Фотография выходит готовым принтом из фотобудки">
+                        </div>
+                        <figcaption><span>02</span><strong>Забрать готовый принт</strong></figcaption>
+                    </figure>
                 </div>
 
                 <div class="bot-copy" data-reveal>
                     <p class="eyebrow">Ещё одна возможность</p>
                     <h2 id="phone-print-title">Любимое фото с телефона — <em>сразу в печать</em></h2>
-                    <p class="bot-copy__lead">Гость может отправить готовый снимок боту в Telegram или ВКонтакте, выбрать кадрирование и получить полноценный принт на площадке.</p>
+                    <p class="bot-copy__lead">Гость отправляет любое фото (картинку) боту в Telegram или ВКонтакте — фотобудка напечатает его.</p>
 
                     <ol class="bot-steps">
-                        <li><span>1</span><p>Открыть бота мероприятия по защищённой гостевой ссылке</p></li>
-                        <li><span>2</span><p>Отправить одно фото и выбрать вариант печати</p></li>
-                        <li><span>3</span><p>Забрать готовый снимок из фотобудки</p></li>
+                        <li><span>1</span><p>Открыть бота мероприятия по предоставленной ссылке</p></li>
+                        <li><span>2</span><p>Отправить фотографию</p></li>
+                        <li><span>3</span><p>Забрать готовый принт из фотобудки</p></li>
                     </ol>
 
                     <div class="messenger-row">
@@ -487,7 +500,7 @@
                     </details>
                     <details>
                         <summary>Можно ли напечатать своё фото с телефона?<span aria-hidden="true"></span></summary>
-                        <p>Да. Гость отправляет снимок боту мероприятия в Telegram или ВКонтакте, выбирает кадрирование и забирает готовый принт из фотобудки.</p>
+                        <p>Да. Гость открывает бота по предоставленной ссылке, отправляет фотографию в Telegram или ВКонтакте и забирает готовый принт из фотобудки.</p>
                     </details>
                     <details>
                         <summary>Можно ли сделать свой дизайн фотополосок?<span aria-hidden="true"></span></summary>

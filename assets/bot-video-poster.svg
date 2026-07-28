@@ -1,59 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" role="img" aria-labelledby="title description">
-  <title id="title">Плейсхолдер видео бота</title>
-  <desc id="description">Экран переписки с ботом печати, который нужно заменить вертикальным видео.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title description">
+  <title id="title">Фотография отправлена боту печати</title>
+  <desc id="description">Схематичная переписка: гость отправляет фотографию, а бот подтверждает, что она принята и отправлена на печать.</desc>
   <defs>
-    <linearGradient id="bg" x1="55" y1="0" x2="662" y2="1280" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F7EAFF"/>
-      <stop offset=".58" stop-color="#FFF7EC"/>
-      <stop offset="1" stop-color="#FFE3EC"/>
+    <linearGradient id="background" x1="40" y1="20" x2="920" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5E8FF"/>
+      <stop offset=".56" stop-color="#FFF8EF"/>
+      <stop offset="1" stop-color="#FFE0EB"/>
     </linearGradient>
-    <linearGradient id="photo" x1="189" y1="291" x2="517" y2="678" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FF88AE"/>
-      <stop offset=".47" stop-color="#FFD567"/>
-      <stop offset="1" stop-color="#A8D8FF"/>
+    <linearGradient id="photo" x1="382" y1="286" x2="858" y2="462" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF82A9"/>
+      <stop offset=".5" stop-color="#FFD567"/>
+      <stop offset="1" stop-color="#91C7FF"/>
     </linearGradient>
-    <filter id="bubble" x="40" y="170" width="640" height="1030" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4F3159" flood-opacity=".12"/>
+    <filter id="shadow" x="0" y="0" width="960" height="720" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#251B2B" flood-opacity=".13"/>
     </filter>
   </defs>
 
-  <rect width="720" height="1280" fill="url(#bg)"/>
-  <circle cx="653" cy="1060" r="176" fill="#D9C3FF" fill-opacity=".55"/>
-  <circle cx="55" cy="405" r="142" fill="#FFD567" fill-opacity=".45"/>
+  <rect width="960" height="720" fill="url(#background)"/>
+  <circle cx="84" cy="590" r="150" fill="#FFD567" fill-opacity=".32"/>
+  <circle cx="890" cy="126" r="132" fill="#D9C3FF" fill-opacity=".45"/>
 
-  <rect x="0" y="0" width="720" height="132" fill="#251B2B"/>
-  <circle cx="67" cy="68" r="33" fill="#FF4F8B"/>
-  <path d="M49 69h36M67 51v36" stroke="#FFFDF9" stroke-width="7" stroke-linecap="round"/>
-  <text x="122" y="62" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="27" font-weight="800">SO.GL · ПЕЧАТЬ</text>
-  <text x="122" y="95" fill="#ACE8D3" font-family="Arial, sans-serif" font-size="20">бот мероприятия · онлайн</text>
-  <text x="638" y="80" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="22" font-weight="700">TG · VK</text>
+  <g filter="url(#shadow)">
+    <rect x="38" y="28" width="884" height="664" rx="42" fill="#FFFDF9"/>
+    <path d="M38 70c0-23 19-42 42-42h800c23 0 42 19 42 42v72H38V70Z" fill="#251B2B"/>
 
-  <g filter="url(#bubble)">
-    <rect x="62" y="180" width="556" height="118" rx="30" fill="#FFFDF9"/>
-    <text x="94" y="227" fill="#251B2B" font-family="Arial, sans-serif" font-size="23" font-weight="700">Пришлите фото, которое хотите</text>
-    <text x="94" y="262" fill="#251B2B" font-family="Arial, sans-serif" font-size="23" font-weight="700">напечатать на празднике ✦</text>
+    <circle cx="94" cy="85" r="31" fill="#FF4F8B"/>
+    <rect x="77" y="72" width="34" height="27" rx="7" fill="none" stroke="#FFFDF9" stroke-width="5"/>
+    <circle cx="94" cy="85" r="7" fill="#FFD567"/>
+    <path d="m84 72 5-7h11l5 7" fill="none" stroke="#FFFDF9" stroke-width="5" stroke-linecap="round"/>
+    <text x="142" y="79" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="25" font-weight="800">SO.GL · БОТ ПЕЧАТИ</text>
+    <text x="142" y="111" fill="#ACE8D3" font-family="Arial, sans-serif" font-size="18" font-weight="700">бот мероприятия · онлайн</text>
+    <rect x="784" y="63" width="102" height="44" rx="22" fill="#FFFDF9" fill-opacity=".12"/>
+    <text x="835" y="91" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="18" font-weight="800">TG · VK</text>
 
-    <rect x="151" y="336" width="500" height="414" rx="30" fill="#FFFDF9"/>
-    <rect x="173" y="358" width="456" height="338" rx="20" fill="url(#photo)"/>
-    <circle cx="393" cy="500" r="80" fill="#FFFDF9" fill-opacity=".7"/>
-    <circle cx="393" cy="486" r="31" fill="#251B2B"/>
-    <path d="M318 630c12-74 54-111 75-111s63 37 75 111" fill="#251B2B"/>
-    <text x="595" y="726" text-anchor="end" fill="#746A76" font-family="Arial, sans-serif" font-size="18">18:42 ✓✓</text>
+    <rect x="76" y="170" width="610" height="88" rx="28" fill="#F1E6FA"/>
+    <text x="106" y="207" fill="#251B2B" font-family="Arial, sans-serif" font-size="22" font-weight="700">Отправьте фотографию —</text>
+    <text x="106" y="235" fill="#251B2B" font-family="Arial, sans-serif" font-size="22" font-weight="700">мы сразу передадим её в печать.</text>
 
-    <rect x="62" y="790" width="596" height="218" rx="30" fill="#FFFDF9"/>
-    <text x="94" y="838" fill="#251B2B" font-family="Arial, sans-serif" font-size="23" font-weight="700">Как разместить фото на листе?</text>
-    <rect x="94" y="871" width="250" height="78" rx="22" fill="#FF4F8B"/>
-    <text x="219" y="920" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="22" font-weight="800">УВЕЛИЧИТЬ</text>
-    <rect x="358" y="871" width="268" height="78" rx="22" fill="#251B2B"/>
-    <text x="492" y="920" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="22" font-weight="800">С ПОЛЯМИ</text>
+    <rect x="354" y="282" width="528" height="226" rx="28" fill="#FFFDF9" stroke="#E3D7E5" stroke-width="2"/>
+    <rect x="378" y="304" width="480" height="154" rx="18" fill="url(#photo)"/>
+    <circle cx="790" cy="337" r="25" fill="#FFF2B9" fill-opacity=".9"/>
+    <path d="M378 421c68-57 126-52 184 0 60-72 152-75 296 4v33H378v-37Z" fill="#8660DC" fill-opacity=".45"/>
+    <circle cx="568" cy="362" r="29" fill="#FFFDF9" fill-opacity=".86"/>
+    <path d="M513 444c9-51 32-77 55-77s46 26 55 77" fill="#251B2B"/>
+    <circle cx="675" cy="370" r="25" fill="#FFFDF9" fill-opacity=".82"/>
+    <path d="M628 444c8-45 28-68 47-68s39 23 47 68" fill="#4F3159"/>
+    <text x="846" y="489" text-anchor="end" fill="#746A76" font-family="Arial, sans-serif" font-size="17">18:42 ✓✓</text>
 
-    <rect x="126" y="1044" width="532" height="94" rx="30" fill="#ACE8D3"/>
-    <circle cx="176" cy="1091" r="24" fill="#251B2B"/>
-    <path d="m163 1091 9 9 18-22" fill="none" stroke="#FFFDF9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="216" y="1084" fill="#251B2B" font-family="Arial, sans-serif" font-size="21" font-weight="800">Фото добавлено в очередь</text>
-    <text x="216" y="1113" fill="#4D4450" font-family="Arial, sans-serif" font-size="18">скоро оно будет напечатано</text>
+    <rect x="76" y="544" width="650" height="106" rx="30" fill="#ACE8D3"/>
+    <circle cx="126" cy="597" r="27" fill="#251B2B"/>
+    <path d="m113 597 9 9 19-23" fill="none" stroke="#FFFDF9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="172" y="590" fill="#251B2B" font-family="Arial, sans-serif" font-size="24" font-weight="850">Принято!</text>
+    <text x="172" y="621" fill="#4D4450" font-family="Arial, sans-serif" font-size="20" font-weight="700">Фото отправлено на печать</text>
   </g>
-
-  <rect x="88" y="1190" width="544" height="58" rx="29" fill="#251B2B"/>
-  <text x="360" y="1228" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="2.5">МЕСТО ДЛЯ ВИДЕО</text>
 </svg>
