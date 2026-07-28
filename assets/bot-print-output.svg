@@ -1,58 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title description">
-  <title id="title">Готовая фотография выходит из фотобудки</title>
-  <desc id="description">Схематичная фотобудка печатает тот же снимок, который гость отправил боту.</desc>
+  <title id="title">Готовая фотография выходит из деревянной фотобудки</title>
+  <desc id="description">Из прорези в нижней деревянной части фотобудки выходит тот же снимок, который гость отправил боту.</desc>
   <defs>
-    <linearGradient id="background" x1="70" y1="10" x2="900" y2="710" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF4D6"/>
-      <stop offset=".5" stop-color="#F4E9FF"/>
-      <stop offset="1" stop-color="#FFDDE9"/>
+    <linearGradient id="background" x1="80" y1="20" x2="880" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6E7"/>
+      <stop offset=".55" stop-color="#F7EDFF"/>
+      <stop offset="1" stop-color="#FFE7EF"/>
     </linearGradient>
-    <linearGradient id="photo" x1="278" y1="392" x2="682" y2="590" gradientUnits="userSpaceOnUse">
+    <linearGradient id="photo-sky" x1="24" y1="24" x2="576" y2="376" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FF82A9"/>
       <stop offset=".5" stop-color="#FFD567"/>
       <stop offset="1" stop-color="#91C7FF"/>
     </linearGradient>
-    <linearGradient id="machine" x1="160" y1="76" x2="820" y2="416" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3C2942"/>
-      <stop offset="1" stop-color="#251B2B"/>
+    <linearGradient id="wood" x1="120" y1="0" x2="840" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B97847"/>
+      <stop offset=".5" stop-color="#8C4F2F"/>
+      <stop offset="1" stop-color="#603225"/>
     </linearGradient>
-    <filter id="shadow" x="0" y="0" width="960" height="720" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#251B2B" flood-opacity=".2"/>
+    <filter id="machine-shadow" x="-10%" y="-20%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#251B2B" flood-opacity=".2"/>
     </filter>
+    <filter id="paper-shadow" x="-25%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="15" stdDeviation="13" flood-color="#251B2B" flood-opacity=".22"/>
+    </filter>
+    <symbol id="guest-photo" viewBox="0 0 600 400">
+      <clipPath id="photo-clip">
+        <rect width="600" height="400" rx="28"/>
+      </clipPath>
+      <g clip-path="url(#photo-clip)">
+        <rect width="600" height="400" fill="url(#photo-sky)"/>
+        <circle cx="516" cy="82" r="36" fill="#FFF2B9" fill-opacity=".94"/>
+        <path d="M0 292c78-68 158-83 240-20 82-94 196-97 360 10v118H0V292Z" fill="#8660DC" fill-opacity=".48"/>
+        <path d="M0 340c101-61 190-55 268 12 88-76 199-70 332 8v40H0v-60Z" fill="#B96D9E" fill-opacity=".68"/>
+        <circle cx="242" cy="185" r="43" fill="#FFFDF9" fill-opacity=".9"/>
+        <path d="M157 352c14-97 51-145 85-145s71 48 85 145" fill="#251B2B"/>
+        <circle cx="380" cy="201" r="38" fill="#FFFDF9" fill-opacity=".86"/>
+        <path d="M306 352c12-86 44-129 74-129s62 43 74 129" fill="#4F3159"/>
+      </g>
+    </symbol>
   </defs>
 
   <rect width="960" height="720" fill="url(#background)"/>
-  <circle cx="86" cy="126" r="146" fill="#FF4F8B" fill-opacity=".13"/>
-  <circle cx="890" cy="590" r="170" fill="#D9C3FF" fill-opacity=".48"/>
 
-  <g filter="url(#shadow)">
-    <rect x="120" y="74" width="720" height="354" rx="54" fill="url(#machine)"/>
-    <circle cx="188" cy="142" r="34" fill="#FF4F8B"/>
-    <rect x="170" y="128" width="36" height="28" rx="7" fill="none" stroke="#FFFDF9" stroke-width="5"/>
-    <circle cx="188" cy="142" r="7" fill="#FFD567"/>
-    <text x="240" y="137" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="25" font-weight="850">SO.GL · ФОТОБУДКА</text>
-    <text x="240" y="169" fill="#CFC2D2" font-family="Arial, sans-serif" font-size="18" font-weight="700">печать на площадке</text>
-
-    <rect x="630" y="115" width="154" height="62" rx="20" fill="#ACE8D3"/>
-    <circle cx="660" cy="146" r="8" fill="#251B2B"/>
-    <text x="688" y="153" fill="#251B2B" font-family="Arial, sans-serif" font-size="18" font-weight="850">ПЕЧАТАЕМ</text>
-
-    <rect x="206" y="232" width="548" height="118" rx="28" fill="#150F18"/>
-    <rect x="254" y="276" width="452" height="28" rx="14" fill="#080609"/>
-    <path d="M286 324h388" stroke="#FF4F8B" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 14"/>
+  <g filter="url(#machine-shadow)">
+    <path d="M72-40h816v348c0 46-37 83-83 83H155c-46 0-83-37-83-83V-40Z" fill="url(#wood)"/>
+    <path d="M105 86c148-55 286 39 438-2 114-31 204-12 302 26M101 158c118-36 233 28 358 3 146-29 254-3 391 40M99 278c145-45 266 30 408-4 124-30 224-6 340 28" fill="none" stroke="#F4C18E" stroke-width="8" stroke-linecap="round" opacity=".14"/>
+    <path d="M72 308c0 46 37 83 83 83h650c46 0 83-37 83-83" fill="none" stroke="#4C261C" stroke-width="7" opacity=".42"/>
   </g>
 
-  <g filter="url(#shadow)" transform="rotate(-1.5 480 505)">
-    <rect x="244" y="310" width="472" height="348" rx="8" fill="#FFFDF9"/>
-    <rect x="274" y="346" width="412" height="238" rx="10" fill="url(#photo)"/>
-    <circle cx="628" cy="390" r="24" fill="#FFF2B9" fill-opacity=".9"/>
-    <path d="M274 531c58-50 108-45 158 0 52-62 130-65 254 3v50H274v-53Z" fill="#8660DC" fill-opacity=".45"/>
-    <circle cx="438" cy="434" r="28" fill="#FFFDF9" fill-opacity=".86"/>
-    <path d="M386 564c9-49 31-74 52-74s43 25 52 74" fill="#251B2B"/>
-    <circle cx="548" cy="441" r="24" fill="#FFFDF9" fill-opacity=".82"/>
-    <path d="M504 564c7-43 26-65 44-65s37 22 44 65" fill="#4F3159"/>
-    <text x="480" y="626" text-anchor="middle" fill="#251B2B" font-family="Arial, sans-serif" font-size="19" font-weight="900" letter-spacing="3">SO.GL · ВАШЕ СОБЫТИЕ</text>
+  <g filter="url(#paper-shadow)" transform="rotate(-1 480 460)">
+    <rect x="250" y="224" width="460" height="414" rx="10" fill="#FFFDF9"/>
+    <use href="#guest-photo" x="278" y="266" width="404" height="269.333"/>
   </g>
 
-  <path d="M176 424v94M142 458h68M784 424v94M750 458h68" stroke="#FF4F8B" stroke-width="7" stroke-linecap="round" opacity=".66"/>
+  <rect x="205" y="187" width="550" height="76" rx="27" fill="#442219"/>
+  <rect x="236" y="211" width="488" height="29" rx="14.5" fill="#100807"/>
 </svg>
