@@ -22,7 +22,7 @@
         document.documentElement.classList.remove('no-js');
         document.documentElement.classList.add('js');
     </script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-business-schema>
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -61,7 +61,8 @@
                 <a href="#included">Что входит</a>
                 <a href="#pricing">Стоимость</a>
                 <a href="#faq">FAQ</a>
-                <a class="button button--small" href="#booking">Связаться</a>
+                <a href="#booking">Контакты</a>
+                <a class="button button--small" href="#booking" data-direct-contact="phone" data-contact-static-label>Позвонить</a>
             </nav>
         </div>
     </header>
@@ -110,7 +111,7 @@
 
                     <div class="hero__actions">
                         <a class="button button--dark" href="#booking" data-hero-booking-link>Уточнить свободную дату</a>
-                        <a class="button hero__call" href="#booking" data-direct-contact="phone"><span data-contact-label>Позвонить</span></a>
+                        <a class="button hero__call" href="#booking" data-direct-contact="phone" data-contact-static-label><span>Позвонить</span></a>
                     </div>
 
                     <ul class="hero__facts" aria-label="Основные условия">
@@ -406,6 +407,7 @@
                         <li>индивидуальный макет</li>
                         <li>доставка и установка</li>
                         <li>фото и видео по QR</li>
+                        <li>печать своих фото с телефона</li>
                     </ul>
 
                     <a class="button button--dark button--block" href="#booking" data-booking-hours>Уточнить дату на 2 часа</a>
@@ -484,6 +486,10 @@
                         <p>После своей сессии гость сканирует QR-код и открывает ссылку на оригиналы фотографий и видео именно этой съёмки. После мероприятия вы также получите общую ссылку на все фото и видео, сделанные за всё событие.</p>
                     </details>
                     <details>
+                        <summary>Можно ли напечатать своё фото с телефона?<span aria-hidden="true"></span></summary>
+                        <p>Да. Гость отправляет снимок боту мероприятия в Telegram или ВКонтакте, выбирает кадрирование и забирает готовый принт из фотобудки.</p>
+                    </details>
+                    <details>
                         <summary>Можно ли сделать свой дизайн фотополосок?<span aria-hidden="true"></span></summary>
                         <p>Да. Индивидуальный макет принта бесплатно входит в стоимость. Заранее согласуем цвета, подписи, дату, имена или логотип и подготовим шаблоны для обоих форматов печати.</p>
                     </details>
@@ -543,8 +549,14 @@
                 <img class="brand__mark" src="assets/logo-placeholder.svg" width="46" height="46" alt="">
                 <span class="brand__words"><strong>SO.GL</strong><small>фотобудка</small></span>
             </a>
-            <p>Великий Устюг · Котлас · Коряжма · другие ближайшие города</p>
-            <p>© <span data-current-year>2026</span> SO.GL</p>
+            <nav class="site-footer__contacts" aria-label="Контакты в подвале сайта">
+                <a href="#booking" data-direct-contact="phone"><span data-contact-label>Позвонить</span></a>
+                <a href="#booking" data-direct-contact="telegram">Telegram</a>
+                <a href="#booking" data-direct-contact="vk">ВКонтакте</a>
+                <a href="#booking" data-direct-contact="max">MAX</a>
+            </nav>
+            <p class="site-footer__copyright">© <span data-current-year>2026</span> SO.GL</p>
+            <p class="site-footer__cities">Великий Устюг · Котлас · Коряжма · другие ближайшие города</p>
         </div>
     </footer>
 

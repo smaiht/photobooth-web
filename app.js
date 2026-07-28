@@ -57,7 +57,8 @@ const SITE_CONFIG = Object.freeze({
         totalOld: document.querySelector("[data-total-old]"),
         priceBreakdown: document.querySelector("[data-price-breakdown]"),
         bookingHoursLink: document.querySelector("[data-booking-hours]"),
-        contactStatus: document.querySelector("[data-contact-status]")
+        contactStatus: document.querySelector("[data-contact-status]"),
+        businessSchema: document.querySelector("[data-business-schema]")
     };
 
     function finiteNumber(value, fallback = 0) {
@@ -381,7 +382,8 @@ const SITE_CONFIG = Object.freeze({
             if (type === "phone" && phoneLabel) {
                 const label = link.querySelector("[data-contact-label]");
                 if (label) label.textContent = phoneLabel;
-                else link.textContent = phoneLabel;
+                else if (!link.hasAttribute("data-contact-static-label")) link.textContent = phoneLabel;
+                link.setAttribute("aria-label", `Позвонить по номеру ${phoneLabel}`);
             }
 
             if (!url) {
@@ -458,6 +460,22 @@ const SITE_CONFIG = Object.freeze({
         document.querySelectorAll("[data-current-year]").forEach((element) => {
             element.textContent = String(new Date().getFullYear());
         });
+
+        if (!elements.businessSchema) return;
+
+        try {
+            const schema = JSON.parse(elements.businessSchema.textContent);
+            const phone = contactUrl("phone").replace(/^tel:/i, "").split(/[?;]/)[0].trim();
+            const sameAs = ["telegram", "vk", "max"]
+                .map((type) => contactUrl(type))
+                .filter(Boolean);
+
+            if (phone) schema.telephone = phone;
+            if (sameAs.length > 0) schema.sameAs = sameAs;
+            elements.businessSchema.textContent = JSON.stringify(schema);
+        } catch (error) {
+            // Keep the static schema untouched if it cannot be parsed.
+        }
     }
 
     setupPricing();
