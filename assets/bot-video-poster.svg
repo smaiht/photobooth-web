@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" role="img" aria-labelledby="title description">
+  <title id="title">Плейсхолдер видео бота</title>
+  <desc id="description">Экран переписки с ботом печати, который нужно заменить вертикальным видео.</desc>
+  <defs>
+    <linearGradient id="bg" x1="55" y1="0" x2="662" y2="1280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7EAFF"/>
+      <stop offset=".58" stop-color="#FFF7EC"/>
+      <stop offset="1" stop-color="#FFE3EC"/>
+    </linearGradient>
+    <linearGradient id="photo" x1="189" y1="291" x2="517" y2="678" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF88AE"/>
+      <stop offset=".47" stop-color="#FFD567"/>
+      <stop offset="1" stop-color="#A8D8FF"/>
+    </linearGradient>
+    <filter id="bubble" x="40" y="170" width="640" height="1030" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#4F3159" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <rect width="720" height="1280" fill="url(#bg)"/>
+  <circle cx="653" cy="1060" r="176" fill="#D9C3FF" fill-opacity=".55"/>
+  <circle cx="55" cy="405" r="142" fill="#FFD567" fill-opacity=".45"/>
+
+  <rect x="0" y="0" width="720" height="132" fill="#251B2B"/>
+  <circle cx="67" cy="68" r="33" fill="#FF4F8B"/>
+  <path d="M49 69h36M67 51v36" stroke="#FFFDF9" stroke-width="7" stroke-linecap="round"/>
+  <text x="122" y="62" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="27" font-weight="800">SO.GL · ПЕЧАТЬ</text>
+  <text x="122" y="95" fill="#ACE8D3" font-family="Arial, sans-serif" font-size="20">бот мероприятия · онлайн</text>
+  <text x="638" y="80" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="22" font-weight="700">TG · VK</text>
+
+  <g filter="url(#bubble)">
+    <rect x="62" y="180" width="556" height="118" rx="30" fill="#FFFDF9"/>
+    <text x="94" y="227" fill="#251B2B" font-family="Arial, sans-serif" font-size="23" font-weight="700">Пришлите фото, которое хотите</text>
+    <text x="94" y="262" fill="#251B2B" font-family="Arial, sans-serif" font-size="23" font-weight="700">напечатать на празднике ✦</text>
+
+    <rect x="151" y="336" width="500" height="414" rx="30" fill="#FFFDF9"/>
+    <rect x="173" y="358" width="456" height="338" rx="20" fill="url(#photo)"/>
+    <circle cx="393" cy="500" r="80" fill="#FFFDF9" fill-opacity=".7"/>
+    <circle cx="393" cy="486" r="31" fill="#251B2B"/>
+    <path d="M318 630c12-74 54-111 75-111s63 37 75 111" fill="#251B2B"/>
+    <text x="595" y="726" text-anchor="end" fill="#746A76" font-family="Arial, sans-serif" font-size="18">18:42 ✓✓</text>
+
+    <rect x="62" y="790" width="596" height="218" rx="30" fill="#FFFDF9"/>
+    <text x="94" y="838" fill="#251B2B" font-family="Arial, sans-serif" font-size="23" font-weight="700">Как разместить фото на листе?</text>
+    <rect x="94" y="871" width="250" height="78" rx="22" fill="#FF4F8B"/>
+    <text x="219" y="920" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="22" font-weight="800">УВЕЛИЧИТЬ</text>
+    <rect x="358" y="871" width="268" height="78" rx="22" fill="#251B2B"/>
+    <text x="492" y="920" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="22" font-weight="800">С ПОЛЯМИ</text>
+
+    <rect x="126" y="1044" width="532" height="94" rx="30" fill="#ACE8D3"/>
+    <circle cx="176" cy="1091" r="24" fill="#251B2B"/>
+    <path d="m163 1091 9 9 18-22" fill="none" stroke="#FFFDF9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="216" y="1084" fill="#251B2B" font-family="Arial, sans-serif" font-size="21" font-weight="800">Фото добавлено в очередь</text>
+    <text x="216" y="1113" fill="#4D4450" font-family="Arial, sans-serif" font-size="18">скоро оно будет напечатано</text>
+  </g>
+
+  <rect x="88" y="1190" width="544" height="58" rx="29" fill="#251B2B"/>
+  <text x="360" y="1228" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="2.5">МЕСТО ДЛЯ ВИДЕО</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" role="img" aria-labelledby="title description">
+  <title id="title">Плейсхолдер главного видео</title>
+  <desc id="description">Яркая иллюстрация фотобудки, которую нужно заменить видео процесса.</desc>
+  <defs>
+    <linearGradient id="bg" x1="77" y1="0" x2="855" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD86F"/>
+      <stop offset=".45" stop-color="#FF88AE"/>
+      <stop offset="1" stop-color="#A67AED"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="289" y1="292" x2="647" y2="816" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE8F0"/>
+      <stop offset="1" stop-color="#D9C3FF"/>
+    </linearGradient>
+    <pattern id="dots" width="42" height="42" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="4" fill="#251B2B" fill-opacity=".1"/>
+    </pattern>
+    <filter id="shadow" x="155" y="170" width="650" height="886" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="24" flood-color="#251B2B" flood-opacity=".25"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="1200" fill="url(#bg)"/>
+  <rect width="960" height="1200" fill="url(#dots)"/>
+  <circle cx="820" cy="132" r="128" fill="#FFF5E5" fill-opacity=".58"/>
+  <circle cx="102" cy="1040" r="190" fill="#FFD567" fill-opacity=".48"/>
+  <path d="M79 252c96-37 174-114 208-210" fill="none" stroke="#FFFDF9" stroke-width="14" stroke-linecap="round" stroke-dasharray="2 35"/>
+
+  <g filter="url(#shadow)">
+    <rect x="208" y="204" width="544" height="748" rx="66" fill="#FFFDF9" stroke="#251B2B" stroke-width="14"/>
+    <rect x="272" y="286" width="416" height="510" rx="34" fill="url(#screen)"/>
+    <circle cx="480" cy="520" r="116" fill="#FFFDF9" fill-opacity=".78"/>
+    <circle cx="480" cy="520" r="82" fill="#251B2B"/>
+    <circle cx="480" cy="520" r="50" fill="#A8D8FF"/>
+    <circle cx="458" cy="493" r="17" fill="#FFFDF9"/>
+    <circle cx="480" cy="864" r="28" fill="#FF4F8B"/>
+    <rect x="391" y="917" width="178" height="106" rx="12" fill="#FFFDF9" stroke="#251B2B" stroke-width="10"/>
+    <rect x="407" y="935" width="65" height="48" rx="5" fill="#FF88AE"/>
+    <rect x="488" y="935" width="65" height="48" rx="5" fill="#FFD567"/>
+  </g>
+
+  <g transform="rotate(-8 157 779)">
+    <rect x="52" y="642" width="210" height="304" fill="#FFFDF9"/>
+    <rect x="70" y="660" width="81" height="108" rx="8" fill="#D9C3FF"/>
+    <rect x="163" y="660" width="81" height="108" rx="8" fill="#FF9DBD"/>
+    <rect x="70" y="780" width="81" height="108" rx="8" fill="#FFD567"/>
+    <rect x="163" y="780" width="81" height="108" rx="8" fill="#A8D8FF"/>
+    <text x="157" y="921" text-anchor="middle" fill="#251B2B" font-family="Arial, sans-serif" font-size="22" font-weight="800">SO.GL</text>
+  </g>
+
+  <g>
+    <circle cx="751" cy="795" r="94" fill="#251B2B"/>
+    <path d="m729 744 74 51-74 51V744Z" fill="#FFFDF9"/>
+  </g>
+
+  <rect x="114" y="1061" width="732" height="74" rx="37" fill="#251B2B"/>
+  <text x="480" y="1108" text-anchor="middle" fill="#FFFDF9" font-family="Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="4">ЗДЕСЬ БУДЕТ ВИДЕО ПРОЦЕССА</text>
+</svg>
