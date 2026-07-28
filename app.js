@@ -44,9 +44,9 @@ const SITE_CONFIG = Object.freeze({
         menuToggle: document.querySelector("[data-menu-toggle]"),
         nav: document.querySelector("[data-nav]"),
         firstHourPrices: document.querySelectorAll("[data-first-hour-price]"),
-        firstHourOld: document.querySelector("[data-first-hour-old]"),
-        extraHourPrice: document.querySelector("[data-extra-hour-price]"),
-        extraHourOld: document.querySelector("[data-extra-hour-old]"),
+        firstHourOldPrices: document.querySelectorAll("[data-first-hour-old]"),
+        extraHourPrices: document.querySelectorAll("[data-extra-hour-price]"),
+        extraHourOldPrices: document.querySelectorAll("[data-extra-hour-old]"),
         discountBanner: document.querySelector("[data-discount-banner]"),
         discountCopy: document.querySelector("[data-discount-copy]"),
         hoursMinus: document.querySelector("[data-hours-minus]"),
@@ -56,11 +56,7 @@ const SITE_CONFIG = Object.freeze({
         totalOld: document.querySelector("[data-total-old]"),
         priceBreakdown: document.querySelector("[data-price-breakdown]"),
         bookingHoursLink: document.querySelector("[data-booking-hours]"),
-        bookingHoursSelect: document.querySelector("[data-booking-hours-select]"),
-        bookingPrice: document.querySelector("[data-booking-price]"),
-        bookingDate: document.querySelector("#booking-date"),
-        bookingForm: document.querySelector("[data-booking-form]"),
-        formStatus: document.querySelector("[data-form-status]")
+        contactStatus: document.querySelector("[data-contact-status]")
     };
 
     function finiteNumber(value, fallback = 0) {
@@ -149,19 +145,19 @@ const SITE_CONFIG = Object.freeze({
             element.textContent = formatMoney(effective.firstHour);
         });
 
-        if (elements.extraHourPrice) {
-            elements.extraHourPrice.textContent = formatMoney(effective.additionalHour);
-        }
+        elements.extraHourPrices.forEach((element) => {
+            element.textContent = formatMoney(effective.additionalHour);
+        });
 
-        if (elements.firstHourOld) {
-            elements.firstHourOld.textContent = formatMoney(pricing.firstHour);
-            setHidden(elements.firstHourOld, effective.firstHourDiscount === 0);
-        }
+        elements.firstHourOldPrices.forEach((element) => {
+            element.textContent = formatMoney(pricing.firstHour);
+            setHidden(element, effective.firstHourDiscount === 0);
+        });
 
-        if (elements.extraHourOld) {
-            elements.extraHourOld.textContent = formatMoney(pricing.additionalHour);
-            setHidden(elements.extraHourOld, effective.additionalHourDiscount === 0);
-        }
+        elements.extraHourOldPrices.forEach((element) => {
+            element.textContent = formatMoney(pricing.additionalHour);
+            setHidden(element, effective.additionalHourDiscount === 0);
+        });
 
         const hasDiscount = effective.firstHourDiscount > 0 || effective.additionalHourDiscount > 0;
         setHidden(elements.discountBanner, !hasDiscount);
@@ -188,7 +184,6 @@ const SITE_CONFIG = Object.freeze({
         }
 
         if (elements.totalPrice) elements.totalPrice.textContent = formatMoney(result.total);
-        if (elements.bookingPrice) elements.bookingPrice.textContent = formatMoney(result.total);
 
         if (elements.totalOld) {
             const hasDiscount = result.original > result.total;
@@ -207,11 +202,7 @@ const SITE_CONFIG = Object.freeze({
         }
 
         if (elements.bookingHoursLink) {
-            elements.bookingHoursLink.textContent = `Проверить дату на ${selectedHours} ${hourWord(selectedHours)}`;
-        }
-
-        if (elements.bookingHoursSelect) {
-            elements.bookingHoursSelect.value = String(selectedHours);
+            elements.bookingHoursLink.textContent = `Уточнить дату на ${selectedHours} ${hourWord(selectedHours)}`;
         }
 
         const atMinimum = selectedHours <= pricing.minHours;
@@ -227,33 +218,17 @@ const SITE_CONFIG = Object.freeze({
         }
     }
 
-    function populateHoursSelect() {
-        if (!elements.bookingHoursSelect) return;
-
-        elements.bookingHoursSelect.replaceChildren();
-        for (let hours = pricing.minHours; hours <= pricing.maxHours; hours += 1) {
-            const option = document.createElement("option");
-            option.value = String(hours);
-            option.textContent = `${hours} ${hourWord(hours)}`;
-            elements.bookingHoursSelect.append(option);
-        }
-    }
-
     function changeHours(nextHours) {
         selectedHours = clamp(nextHours, pricing.minHours, pricing.maxHours);
         renderSelectedHours();
     }
 
     function setupPricing() {
-        populateHoursSelect();
         renderBasePrices();
         renderSelectedHours();
 
         elements.hoursMinus?.addEventListener("click", () => changeHours(selectedHours - 1));
         elements.hoursPlus?.addEventListener("click", () => changeHours(selectedHours + 1));
-        elements.bookingHoursSelect?.addEventListener("change", (event) => {
-            changeHours(Number(event.currentTarget.value));
-        });
     }
 
     function closeMenu({ restoreFocus = false } = {}) {
@@ -390,10 +365,10 @@ const SITE_CONFIG = Object.freeze({
         return String(SITE_CONFIG.contacts[type] || "").trim();
     }
 
-    function setFormStatus(message, kind = "info") {
-        if (!elements.formStatus) return;
-        elements.formStatus.textContent = message;
-        elements.formStatus.dataset.status = kind;
+    function setContactStatus(message, kind = "info") {
+        if (!elements.contactStatus) return;
+        elements.contactStatus.textContent = message;
+        elements.contactStatus.dataset.status = kind;
     }
 
     function setupContacts() {
@@ -403,7 +378,9 @@ const SITE_CONFIG = Object.freeze({
 
             const phoneLabel = String(SITE_CONFIG.contacts.phoneLabel || "").trim();
             if (type === "phone" && phoneLabel) {
-                link.textContent = phoneLabel;
+                const label = link.querySelector("[data-contact-label]");
+                if (label) label.textContent = phoneLabel;
+                else link.textContent = phoneLabel;
             }
 
             if (!url) {
@@ -412,7 +389,7 @@ const SITE_CONFIG = Object.freeze({
                 link.title = "Контакт пока не указан в настройках сайта";
                 link.addEventListener("click", (event) => {
                     event.preventDefault();
-                    setFormStatus("Этот контакт пока не настроен. Добавьте ссылку в начале app.js.", "warning");
+                    setContactStatus("Этот контакт пока не настроен. Добавьте ссылку в начале app.js.", "warning");
                 });
                 return;
             }
@@ -421,98 +398,6 @@ const SITE_CONFIG = Object.freeze({
             if (type !== "phone") {
                 link.target = "_blank";
                 link.rel = "noopener noreferrer";
-            }
-        });
-
-        document.querySelectorAll("[data-submit-contact]").forEach((button) => {
-            const type = button.dataset.submitContact;
-            if (contactUrl(type)) return;
-
-            button.classList.add("is-missing");
-            button.title = "Ссылка пока не указана в настройках сайта";
-            const note = button.querySelector("small");
-            if (note) note.textContent = "ссылка пока не указана";
-        });
-    }
-
-    function localIsoDate(date) {
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, "0");
-        const day = String(date.getDate()).padStart(2, "0");
-        return `${year}-${month}-${day}`;
-    }
-
-    function formatBookingDate(value) {
-        const [year, month, day] = value.split("-").map(Number);
-        if (!year || !month || !day) return value;
-        return new Intl.DateTimeFormat("ru-RU", {
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-        }).format(new Date(year, month - 1, day));
-    }
-
-    function buildBookingRequest(form) {
-        const data = new FormData(form);
-        const hours = Number(data.get("hours"));
-        const result = calculatePrice(hours);
-
-        return [
-            "Здравствуйте! Хочу уточнить, свободна ли фотобудка SO.GL.",
-            "",
-            `Дата: ${formatBookingDate(String(data.get("date")))}`,
-            `Город: ${data.get("city")}`,
-            `Событие: ${data.get("event")}`,
-            `Продолжительность: ${hours} ${hourWord(hours)}`,
-            `Предварительная стоимость: ${formatMoney(result.total)}`,
-            "",
-            "Подскажите, пожалуйста, свободна ли эта дата?"
-        ].join("\n");
-    }
-
-    async function copyText(text) {
-        if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(text);
-            return;
-        }
-
-        const temporary = document.createElement("textarea");
-        temporary.value = text;
-        temporary.setAttribute("readonly", "");
-        temporary.style.position = "fixed";
-        temporary.style.opacity = "0";
-        document.body.append(temporary);
-        temporary.select();
-        const copied = document.execCommand("copy");
-        temporary.remove();
-        if (!copied) throw new Error("Clipboard copy failed");
-    }
-
-    function setupBookingForm() {
-        if (elements.bookingDate) elements.bookingDate.min = localIsoDate(new Date());
-        if (!elements.bookingForm) return;
-
-        elements.bookingForm.addEventListener("submit", async (event) => {
-            event.preventDefault();
-            if (!elements.bookingForm.reportValidity()) return;
-
-            const type = event.submitter?.dataset.submitContact || "telegram";
-            const url = contactUrl(type);
-            const contactName = type === "vk" ? "ВКонтакте" : "Telegram";
-            const request = buildBookingRequest(elements.bookingForm);
-            const copyPromise = copyText(request);
-
-            if (url) window.open(url, "_blank", "noopener,noreferrer");
-
-            try {
-                await copyPromise;
-                if (url) {
-                    setFormStatus(`Запрос скопирован. Вставьте его в открывшийся чат ${contactName}.`, "success");
-                } else {
-                    setFormStatus(`Запрос скопирован, но ссылка на ${contactName} пока не указана в app.js.`, "warning");
-                }
-            } catch (error) {
-                setFormStatus("Не получилось скопировать запрос. Проверьте разрешение браузера на доступ к буферу обмена.", "error");
             }
         });
     }
@@ -579,7 +464,6 @@ const SITE_CONFIG = Object.freeze({
     setupMobileCallToAction();
     setupVideos();
     setupContacts();
-    setupBookingForm();
     setupRevealAnimations();
     setupPageMetadata();
 })();
