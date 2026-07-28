@@ -18,6 +18,7 @@ const SITE_CONFIG = Object.freeze({
     contacts: Object.freeze({
         telegram: "",
         vk: "",
+        max: "",
         phoneHref: "",
         phoneLabel: ""
     }),
@@ -385,12 +386,12 @@ const SITE_CONFIG = Object.freeze({
 
             if (!url) {
                 link.classList.add("is-missing");
-                link.setAttribute("aria-disabled", "true");
                 link.title = "Контакт пока не указан в настройках сайта";
                 link.addEventListener("click", (event) => {
-                    event.preventDefault();
                     setContactStatus("Этот контакт пока не настроен. Добавьте ссылку в начале app.js.", "warning");
+                    if (link.closest(".contact-card")) event.preventDefault();
                 });
+                if (link.closest(".contact-card")) link.setAttribute("aria-disabled", "true");
                 return;
             }
 

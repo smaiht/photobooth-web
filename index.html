@@ -110,27 +110,41 @@
 
                     <div class="hero__actions">
                         <a class="button button--dark" href="#booking" data-hero-booking-link>Уточнить свободную дату</a>
-                        <a class="text-link" href="#how">Посмотреть процесс <span aria-hidden="true">↓</span></a>
+                        <a class="button button--outline hero__call" href="#booking" data-direct-contact="phone"><span data-contact-label>Позвонить</span></a>
                     </div>
 
                     <ul class="hero__facts" aria-label="Основные условия">
-                        <li>
-                            <div class="hero__fact-prices">
-                                <s data-first-hour-old hidden>3 000 ₽</s>
-                                <strong data-first-hour-price>3 000 ₽</strong>
+                        <li class="hero__fact--rates">
+                            <div class="hero__rate">
+                                <div class="hero__fact-prices">
+                                    <s data-first-hour-old hidden>3 000 ₽</s>
+                                    <strong data-first-hour-price>3 000 ₽</strong>
+                                </div>
+                                <span>первый час</span>
                             </div>
-                            <span>за первый час</span>
+                            <div class="hero__rate">
+                                <div class="hero__fact-prices">
+                                    <s data-extra-hour-old hidden>2 000 ₽</s>
+                                    <strong data-extra-hour-price>2 000 ₽</strong>
+                                </div>
+                                <span>каждый следующий</span>
+                            </div>
                         </li>
                         <li>
-                            <div class="hero__fact-prices">
-                                <s data-extra-hour-old hidden>2 000 ₽</s>
-                                <strong data-extra-hour-price>2 000 ₽</strong>
-                            </div>
-                            <span>за каждый следующий</span>
+                            <strong>Безлимит</strong>
+                            <span>на печать</span>
                         </li>
                         <li>
                             <strong>0 ₽</strong>
                             <span>доставка</span>
+                        </li>
+                        <li>
+                            <strong>Оригиналы</strong>
+                            <span>фото и видео по QR</span>
+                        </li>
+                        <li>
+                            <strong>Свои фото</strong>
+                            <span>печать с телефона</span>
                         </li>
                     </ul>
                 </div>
@@ -395,6 +409,11 @@
                     </ul>
 
                     <a class="button button--dark button--block" href="#booking" data-booking-hours>Уточнить дату на 2 часа</a>
+                    <a class="calculator__call" href="#booking" data-direct-contact="phone">
+                        <span>Или позвонить</span>
+                        <strong data-contact-label>Номер телефона</strong>
+                        <i aria-hidden="true">→</i>
+                    </a>
                     <p class="calculator__note">Точная дата и условия фиксируются в договоре.</p>
                 </div>
             </div>
@@ -477,36 +496,33 @@
             <div class="shell booking-grid">
                 <div class="booking-copy" data-reveal>
                     <p class="eyebrow">Контакты</p>
-                    <h2 id="booking-title">Позвоните или напишите — <em>мы проверим дату</em></h2>
-                    <p>Никаких форм: выберите удобный способ связи и напишите дату, город и формат события. Остальные детали уточним сами.</p>
-
-                    <ul class="booking-hints" aria-label="Что сообщить при обращении">
-                        <li>дата события</li>
-                        <li>город или площадка</li>
-                        <li>примерное время аренды</li>
-                    </ul>
+                    <h2 id="booking-title">Свяжитесь с нами — <em>проверим свободную дату</em></h2>
+                    <p>Позвоните или напишите. Достаточно указать дату, время и адрес.</p>
                 </div>
 
                 <div class="contact-card" data-reveal>
-                    <p class="contact-card__title">Как вам удобнее?</p>
                     <div class="contact-list">
+                        <a class="contact-option contact-option--phone" href="#booking" data-direct-contact="phone">
+                            <span class="contact-option__mark" aria-hidden="true">TEL</span>
+                            <span class="contact-option__copy"><strong data-contact-label>Номер телефона</strong><small>позвонить</small></span>
+                            <span class="contact-option__arrow" aria-hidden="true">→</span>
+                        </a>
                         <a class="contact-option contact-option--telegram" href="#booking" data-direct-contact="telegram">
                             <span class="contact-option__mark" aria-hidden="true">TG</span>
-                            <span class="contact-option__copy"><strong>Telegram</strong><small>написать сообщение</small></span>
+                            <span class="contact-option__copy"><strong>Telegram</strong><small>написать</small></span>
                             <span class="contact-option__arrow" aria-hidden="true">↗</span>
                         </a>
                         <a class="contact-option contact-option--vk" href="#booking" data-direct-contact="vk">
                             <span class="contact-option__mark" aria-hidden="true">VK</span>
-                            <span class="contact-option__copy"><strong>ВКонтакте</strong><small>написать сообщение</small></span>
+                            <span class="contact-option__copy"><strong>ВКонтакте</strong><small>написать</small></span>
                             <span class="contact-option__arrow" aria-hidden="true">↗</span>
                         </a>
-                        <a class="contact-option contact-option--phone" href="#booking" data-direct-contact="phone">
-                            <span class="contact-option__mark" aria-hidden="true">TEL</span>
-                            <span class="contact-option__copy"><strong data-contact-label>Позвонить</strong><small>номер телефона</small></span>
-                            <span class="contact-option__arrow" aria-hidden="true">→</span>
+                        <a class="contact-option contact-option--max" href="#booking" data-direct-contact="max">
+                            <span class="contact-option__mark" aria-hidden="true">MAX</span>
+                            <span class="contact-option__copy"><strong>MAX</strong><small>написать</small></span>
+                            <span class="contact-option__arrow" aria-hidden="true">↗</span>
                         </a>
                     </div>
-                    <p class="contact-card__note">Сразу укажите дату и город — так мы быстрее проверим, свободна ли фотобудка.</p>
                     <p class="contact-status" role="status" aria-live="polite" data-contact-status></p>
                 </div>
             </div>
@@ -524,7 +540,10 @@
         </div>
     </footer>
 
-    <a class="mobile-cta" href="#booking" data-mobile-cta>Связаться <span aria-hidden="true">→</span></a>
+    <div class="mobile-cta" data-mobile-cta>
+        <a class="mobile-cta__contacts" href="#booking">Контакты</a>
+        <a class="mobile-cta__phone" href="#booking" data-direct-contact="phone"><span data-contact-label>Позвонить</span><i aria-hidden="true">→</i></a>
+    </div>
 
     <script src="app.js" defer></script>
 </body>
