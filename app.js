@@ -16,11 +16,11 @@ const SITE_CONFIG = Object.freeze({
         defaultHours: 2
     }),
     contacts: Object.freeze({
-        telegram: "",
-        vk: "",
-        max: "",
-        phoneHref: "",
-        phoneLabel: ""
+        telegram: "https://t.me/free_and_alive",
+        vk: "https://vk.ru/fotobudka_vu",
+        max: "https://max.ru/u/f9LHodD0cOIrRjCqo6iJKCF4A6hDMyD-OfhO8yK3LufTo_nWTtOocgwcr_M",
+        phoneHref: "tel:+79999661337",
+        phoneLabel: "+7(999) 966 13-37"
     }),
     media: Object.freeze({
         heroVideo: "",
