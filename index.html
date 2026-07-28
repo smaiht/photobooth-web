@@ -110,7 +110,7 @@
 
                     <div class="hero__actions">
                         <a class="button button--dark" href="#booking" data-hero-booking-link>Уточнить свободную дату</a>
-                        <a class="button button--outline hero__call" href="#booking" data-direct-contact="phone"><span data-contact-label>Позвонить</span></a>
+                        <a class="button hero__call" href="#booking" data-direct-contact="phone"><span data-contact-label>Позвонить</span></a>
                     </div>
 
                     <ul class="hero__facts" aria-label="Основные условия">
@@ -417,6 +417,14 @@
                     <p class="calculator__note">Точная дата и условия фиксируются в договоре.</p>
                 </div>
             </div>
+
+            <aside class="shell pricing-special" data-reveal aria-label="Условия для долгих мероприятий">
+                <div>
+                    <strong>Долгое мероприятие или несколько дней?</strong>
+                    <p>Рассчитаем специальные условия и скидку индивидуально — напишите нам, и мы подберём подходящий вариант.</p>
+                </div>
+                <a href="#booking">Обсудить условия <span aria-hidden="true">→</span></a>
+            </aside>
         </section>
 
         <section class="section section--gallery" id="gallery" aria-labelledby="gallery-title">
@@ -464,8 +472,8 @@
                         <p>Обычная розетка 220 В и свободное место для будки и гостей. Точное расположение согласуем с площадкой заранее.</p>
                     </details>
                     <details>
-                        <summary>Установка входит в оплаченное время?<span aria-hidden="true"></span></summary>
-                        <p>Нет. Мы приезжаем заранее, устанавливаем и проверяем оборудование. Оплаченное время начинается только с согласованного старта.</p>
+                        <summary>Установка и настройка отнимают время аренды?<span aria-hidden="true"></span></summary>
+                        <p>Нет. Мы бесплатно приезжаем заранее, доставляем, устанавливаем и настраиваем фотобудку до начала события. Время аренды начинается только с согласованного старта; установка и вывоз отдельно не оплачиваются.</p>
                     </details>
                     <details>
                         <summary>Печать действительно безлимитная?<span aria-hidden="true"></span></summary>
@@ -473,11 +481,11 @@
                     </details>
                     <details>
                         <summary>Что получает гость по QR-коду?<span aria-hidden="true"></span></summary>
-                        <p>Персональную папку с оригиналами фотографий и видео своей сессии. Ссылка открывается прямо на телефоне.</p>
+                        <p>После своей сессии гость сканирует QR-код и открывает ссылку на оригиналы фотографий и видео именно этой съёмки. После мероприятия вы также получите общую ссылку на все фото и видео, сделанные за всё событие.</p>
                     </details>
                     <details>
-                        <summary>Можно ли сделать принты в стиле мероприятия?<span aria-hidden="true"></span></summary>
-                        <p>Да. Заранее согласуем цвета, подписи, дату, имена или логотип и подготовим оба формата печати.</p>
+                        <summary>Можно ли сделать свой дизайн фотополосок?<span aria-hidden="true"></span></summary>
+                        <p>Да. Индивидуальный макет принта бесплатно входит в стоимость. Заранее согласуем цвета, подписи, дату, имена или логотип и подготовим шаблоны для обоих форматов печати.</p>
                     </details>
                     <details>
                         <summary>Как бронируется дата и проходит оплата?<span aria-hidden="true"></span></summary>
@@ -540,10 +548,7 @@
         </div>
     </footer>
 
-    <div class="mobile-cta" data-mobile-cta>
-        <a class="mobile-cta__contacts" href="#booking">Контакты</a>
-        <a class="mobile-cta__phone" href="#booking" data-direct-contact="phone"><span data-contact-label>Позвонить</span><i aria-hidden="true">→</i></a>
-    </div>
+    <a class="mobile-cta" href="#booking" data-mobile-cta>Связаться с нами <span aria-hidden="true">→</span></a>
 
     <script src="app.js" defer></script>
 </body>

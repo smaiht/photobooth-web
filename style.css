@@ -299,19 +299,6 @@ h1 em {
     box-shadow: 0 18px 38px rgba(37, 27, 43, 0.26);
 }
 
-.button--outline {
-    border: 1px solid rgba(37, 27, 43, 0.2);
-    background: rgba(255, 255, 255, 0.45);
-    box-shadow: none;
-    color: var(--ink);
-}
-
-.button--outline:hover {
-    border-color: rgba(37, 27, 43, 0.32);
-    background: #fff;
-    box-shadow: var(--shadow-sm);
-}
-
 .button--small {
     min-height: 42px;
     padding: 10px 18px;
@@ -531,9 +518,9 @@ h1 em {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(400px, 0.75fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(460px, 0.95fr);
     grid-template-rows: auto auto;
-    column-gap: clamp(50px, 7vw, 110px);
+    column-gap: clamp(40px, 5vw, 72px);
     align-items: start;
 }
 
@@ -649,7 +636,7 @@ h1 em {
     grid-column: 2;
     grid-row: 1 / span 2;
     width: 100%;
-    max-width: 520px;
+    max-width: 580px;
     align-self: center;
     justify-self: end;
     padding-bottom: 70px;
@@ -1631,6 +1618,57 @@ h1 em {
     text-align: center;
 }
 
+.pricing-special {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    margin-top: 48px;
+    padding: 24px 28px;
+    border: 1px solid rgba(37, 27, 43, 0.14);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.46);
+    box-shadow: var(--shadow-sm);
+}
+
+.pricing-special > div {
+    max-width: 760px;
+}
+
+.pricing-special strong {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.pricing-special p {
+    margin: 5px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.84rem;
+}
+
+.pricing-special a {
+    display: inline-flex;
+    min-height: 46px;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 17px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 850;
+    text-decoration: none;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.pricing-special a:hover {
+    background: #3b2b43;
+    transform: translateY(-2px);
+}
+
 /* Gallery */
 .section--gallery {
     background:
@@ -2078,8 +2116,8 @@ h1 em {
     }
 
     .hero__grid {
-        grid-template-columns: minmax(0, 1fr) minmax(340px, 0.65fr);
-        column-gap: 40px;
+        grid-template-columns: minmax(0, 1fr) minmax(380px, 0.82fr);
+        column-gap: 32px;
     }
 
     .hero h1 {
@@ -2355,56 +2393,29 @@ h1 em {
         position: fixed;
         right: 14px;
         bottom: calc(14px + env(safe-area-inset-bottom));
-        left: 14px;
         z-index: 90;
-        display: grid;
-        min-height: 52px;
-        grid-template-columns: auto minmax(0, 1fr);
-        gap: 4px;
-        align-items: stretch;
-        padding: 5px;
+        display: inline-flex;
+        max-width: calc(100% - 28px);
+        min-height: 50px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 11px 16px 11px 19px;
         border: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 999px;
         background: rgba(37, 27, 43, 0.94);
         box-shadow: 0 16px 40px rgba(37, 27, 43, 0.3);
         color: #fff;
-        -webkit-backdrop-filter: blur(16px);
-        backdrop-filter: blur(16px);
-    }
-
-    .mobile-cta a {
-        display: flex;
-        min-width: 0;
-        align-items: center;
-        justify-content: center;
-        padding: 9px 15px;
-        border-radius: 999px;
-        color: #fff;
         font-size: 0.8rem;
         font-weight: 850;
         line-height: 1.1;
         text-decoration: none;
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
     }
 
-    .mobile-cta__contacts {
-        color: rgba(255, 255, 255, 0.76) !important;
-    }
-
-    .mobile-cta .mobile-cta__phone {
-        justify-content: space-between;
-        gap: 10px;
-        background: var(--pink);
-    }
-
-    .mobile-cta__phone span {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .mobile-cta__phone i {
-        flex: 0 0 auto;
-        font-style: normal;
+    .mobile-cta span {
+        font-size: 1rem;
     }
 
     .js .mobile-cta {
@@ -2665,6 +2676,18 @@ h1 em {
 
     .calculator {
         padding: 24px 18px;
+    }
+
+    .pricing-special {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 32px;
+        padding: 20px;
+    }
+
+    .pricing-special a {
+        justify-content: space-between;
     }
 
     .calculator__top {
