@@ -3,8 +3,8 @@
 set -eu
 
 # Настройки первого деплоя
-DEPLOY_HOST=51.250.37.166
-DEPLOY_USER=yc-user
+DEPLOY_HOST=107.150.2.179
+DEPLOY_USER=root
 DEPLOY_PORT=22
 DEPLOY_PATH=/var/www/so.gl
 CERTBOT_EMAIL=''

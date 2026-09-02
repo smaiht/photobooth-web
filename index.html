@@ -18,6 +18,7 @@
     <meta property="og:description" content="Фотобудка в Великом Устюге, Котласе, Коряжме и других ближайших городах. Безлимитные принты, фото и видео по QR-коду, бесплатная доставка.">
     <meta property="og:url" content="https://so.gl/">
 
+    <link rel="preload" href="assets/hero-video-poster.webp?rev=pb1-1" as="image" type="image/webp" fetchpriority="high">
     <link rel="stylesheet" href="style.css?v=20260728-1">
     <script>
         document.documentElement.classList.remove('no-js');
@@ -88,12 +89,19 @@
                         <div class="video-frame video-frame--hero">
                             <video
                                 data-config-video="hero"
-                                poster="assets/hero-video-poster.svg?v=20260728-1"
+                                width="720"
+                                height="900"
+                                poster="assets/hero-video-poster.webp?rev=pb1-1"
+                                aria-label="Гости фотографируются в фотобудке и забирают готовый принт"
+                                autoplay
                                 muted
                                 loop
                                 playsinline
-                                preload="metadata"
-                            >Видео о процессе работы фотобудки</video>
+                                preload="auto"
+                            >
+                                <source src="assets/video/pb1-web-720p.mp4?rev=pb1-1" type="video/mp4">
+                                Видео о процессе работы фотобудки
+                            </video>
                             <button class="video-control" type="button" data-video-control hidden>
                                 <span data-video-control-label>Пауза</span>
                             </button>

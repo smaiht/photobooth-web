@@ -3,7 +3,7 @@
  *
  * This is the only block that normally needs editing before publication.
  * Discounts are specified in rubles. Set both values to 0 to hide the sale UI.
- * Contact and video values should be full public URLs.
+ * Contact and optional video values should be public URLs.
  */
 const SITE_CONFIG = Object.freeze({
     pricing: Object.freeze({
@@ -23,7 +23,6 @@ const SITE_CONFIG = Object.freeze({
         phoneLabel: "+7(999) 966 13-37"
     }),
     media: Object.freeze({
-        heroVideo: "",
         botVideo: ""
     })
 });
@@ -314,14 +313,17 @@ const SITE_CONFIG = Object.freeze({
     }
 
     function setupVideos() {
-        const sources = {
-            hero: String(SITE_CONFIG.media.heroVideo || "").trim(),
-            bot: String(SITE_CONFIG.media.botVideo || "").trim()
-        };
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         document.querySelectorAll("[data-config-video]").forEach((video) => {
-            const source = sources[video.dataset.configVideo];
-            if (!source) return;
+            const inlineSource = (
+                video.getAttribute("src") ||
+                video.querySelector("source[src]")?.getAttribute("src") ||
+                ""
+            ).trim();
+            const configKey = `${video.dataset.configVideo}Video`;
+            const configuredSource = String(SITE_CONFIG.media[configKey] || "").trim();
+            if (!inlineSource && !configuredSource) return;
 
             const container = video.closest(".video-frame, .bot-flow__media");
             const control = container?.querySelector("[data-video-control]");
@@ -338,17 +340,20 @@ const SITE_CONFIG = Object.freeze({
                 }
             };
 
-            video.src = source;
-            video.autoplay = true;
             video.muted = true;
-            video.load();
+            video.autoplay = !reducedMotion;
+
+            // Inline sources are discovered by the browser's preload scanner. Configured
+            // sources remain available for optional videos that do not live in the HTML.
+            if (!inlineSource && configuredSource) {
+                video.src = configuredSource;
+                video.load();
+            }
+
             if (control) control.hidden = false;
 
             video.addEventListener("play", renderPlaybackState);
             video.addEventListener("pause", renderPlaybackState);
-            video.addEventListener("canplay", () => {
-                video.play().catch(renderPlaybackState);
-            }, { once: true });
             video.addEventListener("error", () => {
                 if (control) control.hidden = true;
             }, { once: true });
@@ -357,6 +362,14 @@ const SITE_CONFIG = Object.freeze({
                 if (video.paused) video.play().catch(renderPlaybackState);
                 else video.pause();
             });
+
+            if (reducedMotion) {
+                video.pause();
+            } else {
+                video.addEventListener("canplay", () => {
+                    video.play().catch(renderPlaybackState);
+                }, { once: true });
+            }
 
             renderPlaybackState();
         });

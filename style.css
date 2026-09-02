@@ -2611,7 +2611,7 @@ h1 em {
     }
 
     .video-frame--hero {
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 4 / 5;
     }
 
     .video-card__bar {
