@@ -1,6 +1,6 @@
 # SO.GL — сайт фотобудки
 
-<video src="https://raw.githubusercontent.com/smaiht/photobooth-web/main/assets/video/pb1-web-720p.mp4" controls muted width="720"></video>
+https://github.com/user-attachments/assets/d3326474-8245-40b8-9bb8-931df9025145
 
 Одностраничный сайт без сборщика и зависимостей: HTML, CSS и JavaScript. Его можно разместить на любом статическом хостинге.
 
