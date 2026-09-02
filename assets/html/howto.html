@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <title>Photobooth idle — raster concept</title>
     <style>
         * { box-sizing: border-box; }
         html, body { width: 100%; height: 100%; margin: 0; }
 
         body {
-            display: grid;
-            place-items: center;
             overflow: hidden;
             background: #fbfaf8;
             font-family: "Comfortaa", sans-serif;
@@ -44,11 +43,12 @@
             --green: #173b29;
 
             position: relative;
-            width: 100%;
-            max-height: 100%;
-            aspect-ratio: 1200 / 700;
+            width: 1200px;
+            height: 700px;
+            flex: none;
             overflow: hidden;
             background: linear-gradient(155deg, #f8f4ec, #e9e2d8);
+            transform-origin: top left;
         }
 
         .progress {
@@ -502,7 +502,7 @@
 
             <div class="actors">
             <div class="booth">
-                <img src="./idle-process/booth.png" alt="">
+                <img src="./idle-process/booth.webp?rev=howto-1" alt="">
 
                 <div class="booth-screen">
                     <div class="screen-state screen-start">
@@ -510,21 +510,21 @@
                     </div>
 
                     <div class="screen-state screen-live">
-                        <img class="screen-live-image" src="./idle-process/frame-1.jpg" alt="">
+                        <img class="screen-live-image" src="./idle-process/frame-1.webp?rev=howto-1" alt="">
                         <b class="screen-countdown"></b>
                         <small class="screen-counter"></small>
                     </div>
 
                     <div class="screen-state screen-choice">
                         <div class="choice-sheet">
-                            <img src="./idle-process/formats-row.jpg" alt="">
+                            <img src="./idle-process/formats-row.webp?rev=howto-1" alt="">
                             <b class="choice-pick"></b>
                         </div>
                     </div>
 
                     <div class="screen-state screen-done">
                         <strong>ГОТОВО!</strong>
-                        <img src="./idle-process/qr.png" alt="QR">
+                        <img src="./idle-process/qr.webp?rev=howto-1" alt="QR">
                     </div>
 
                     <div class="tap-ring"></div>
@@ -537,16 +537,16 @@
             </div>
 
             <div class="guests">
-                <img class="guests-frame" data-frame="neutral" src="./idle-process/guests-neutral.png" alt="">
-                <img class="guests-frame" data-frame="reach" src="./idle-process/guests-reach.png" alt="">
-                <img class="guests-frame" data-frame="pose-1" src="./idle-process/guests-pose-1.png" alt="">
-                <img class="guests-frame" data-frame="pose-2" src="./idle-process/guests-pose-2.png" alt="">
-                <img class="guests-frame" data-frame="pose-3" src="./idle-process/guests-pose-3.png" alt="">
-                <img class="guests-frame" data-frame="pose-4" src="./idle-process/guests-pose-4.png" alt="">
+                <img class="guests-frame" data-frame="neutral" src="./idle-process/guests-neutral.webp?rev=howto-1" alt="">
+                <img class="guests-frame" data-frame="reach" src="./idle-process/guests-reach.webp?rev=howto-1" alt="">
+                <img class="guests-frame" data-frame="pose-1" src="./idle-process/guests-pose-1.webp?rev=howto-1" alt="">
+                <img class="guests-frame" data-frame="pose-2" src="./idle-process/guests-pose-2.webp?rev=howto-1" alt="">
+                <img class="guests-frame" data-frame="pose-3" src="./idle-process/guests-pose-3.webp?rev=howto-1" alt="">
+                <img class="guests-frame" data-frame="pose-4" src="./idle-process/guests-pose-4.webp?rev=howto-1" alt="">
             </div>
 
             <div class="print">
-                <img src="./idle-process/print-grid.jpg" alt="">
+                <img src="./idle-process/print-grid.webp?rev=howto-1" alt="">
             </div>
             </div>
 
@@ -621,6 +621,13 @@
             };
 
             const root = document.querySelector("[data-idle-process]");
+            const fitCanvas = () => {
+                const scale = Math.min(innerWidth / 1200, innerHeight / 700);
+                root.style.transform = `scale(${scale})`;
+            };
+            addEventListener("resize", fitCanvas);
+            fitCanvas();
+
             const actors = root.querySelector(".actors");
             const booth = root.querySelector(".booth");
             const guests = root.querySelector(".guests");
@@ -657,10 +664,10 @@
             };
 
             const frameSources = {
-                "pose-1": "./idle-process/frame-1.jpg",
-                "pose-2": "./idle-process/frame-2.jpg",
-                "pose-3": "./idle-process/frame-3.jpg",
-                "pose-4": "./idle-process/frame-4.jpg",
+                "pose-1": "./idle-process/frame-1.webp?rev=howto-1",
+                "pose-2": "./idle-process/frame-2.webp?rev=howto-1",
+                "pose-3": "./idle-process/frame-3.webp?rev=howto-1",
+                "pose-4": "./idle-process/frame-4.webp?rev=howto-1",
             };
 
             const stages = {

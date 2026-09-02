@@ -815,6 +815,23 @@ h1 em {
     to { transform: translateX(-35%); }
 }
 
+/* How it works animation */
+.howto-embed {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto clamp(32px, 5vw, 64px);
+}
+
+.howto-embed__frame {
+    display: block;
+    width: 100%;
+    aspect-ratio: 12 / 7;
+    border: 0;
+    border-radius: var(--radius-lg);
+    background: #fbfaf8;
+    box-shadow: var(--shadow-sm);
+}
+
 /* Compact sections */
 .section--compact {
     padding: 96px 0;
@@ -2489,6 +2506,19 @@ h1 em {
 @media (max-width: 580px) {
     .shell {
         width: min(100% - 28px, var(--shell));
+    }
+
+    .howto-embed {
+        width: 100vw;
+        max-width: none;
+        margin-right: calc(50% - 50vw);
+        margin-bottom: 32px;
+        margin-left: calc(50% - 50vw);
+    }
+
+    .howto-embed__frame {
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .section {
